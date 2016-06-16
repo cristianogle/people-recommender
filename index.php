@@ -9,7 +9,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 		<meta charset="UTF-8"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/check.css">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/sections.css">
 	</head>
 	
 	<body>
@@ -33,17 +35,14 @@
 		
 		<!-- USER BAR -->
 		<div id="user-bar">
-			<div id="fast-check-wrapper">
-				
-			</div>
-			<nav id="sections-nav">
-				<div class="section-tab active">Suggestions</div>
-				<div class="section-tab">My Profile</div>
-				<div class="section-tab">Help</div>
-			</nav>
+		    <?php include 'resources/header/check.php' ?>
+		    <?php include 'resources/header/sections.php' ?>		
 		</div>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<!-- *** check form JS HERE *** -->
+		<script src="js/sections.js"></script>
+		<script src="js/check.js"></script>
 	</body>
 </html>
