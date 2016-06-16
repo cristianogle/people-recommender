@@ -1,0 +1,16 @@
+/* Fast check wrapper CSS */
+
+#user-bar {
+	background: red;
+}
+
+#check-wrapper {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 50%;
+  	margin: 0 auto;
+}
+
+#check-status {
+	
+}
