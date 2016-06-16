@@ -35,7 +35,7 @@
 		
 		<!-- USER BAR -->
 		<div id="user-bar">
-			<!-- *** check form PHP HERE *** -->
+		    <?php include 'resources/header/check.php' ?>
 		    <?php include 'resources/header/sections.php' ?>		
 		</div>
 		
