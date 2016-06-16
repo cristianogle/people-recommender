@@ -7,22 +7,22 @@
 	</div>
 				
 	<div id="check-with">
-		<div class="input-group">
+		<div class="input-group input-group-sm">		<!-- input-group-sm for small sizing -->
 			<span class="input-group-addon" id="basic-addon1">With</span>
 		  	<input type="text" class="form-control" placeholder="Who are you with?" aria-describedby="basic-addon1">
 		</div>
 	</div>
 	<div id="check-place">
-		<div class="input-group">
+		<div class="input-group input-group-sm">
 			<span class="input-group-addon" id="basic-addon2">At</span>
 			<input type="text" class="form-control" placeholder="Where are you?" aria-describedby="basic-addon1">
 		</div>
 	</div>
 				
 	<div id="check-publish">
-		<i class="fa fa-user-plus" aria-hidden="true"></i>
-		<i class="fa fa-map-marker" aria-hidden="true"></i>
-		<div id="visibility-dropdown" class="dropdown pull-right">
+		<i id="user-icon" class="fa fa-user-plus fa-2x" aria-hidden="true"></i>		<!-- 2x for sizing -->
+		<i id="place-icon" class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+		<div id="post" class="dropdown pull-right">
   			<button class="btn btn-default btn-sm dropdown-toggle" type="button" id="visibility-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       			Friends
   	  			<span class="caret"></span>
