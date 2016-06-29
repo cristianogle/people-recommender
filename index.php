@@ -62,6 +62,7 @@
 		<!-- *** check form JS HERE *** -->
 		<script src="js/sections.js"></script>
 		<script src="js/check.js"></script>
+		<script src="js/friends.js"></script>
 	</body>
 </html>
 
