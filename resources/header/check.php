@@ -1,7 +1,9 @@
 <div id="check-wrapper">
 	<div id="check-status">
 		<div id="status-img">
-			<i class="fa fa-user fa-5x" aria-hidden="true"></i>
+			<?php
+				require_once( 'picture.php' );
+			?>
 		</div>
 		<input id="status-text" type="text" class="form-control" placeholder="What's on your mind?">
 	</div>
@@ -9,13 +11,13 @@
 	<div id="check-with">
 		<div class="input-group input-group-sm">		<!-- input-group-sm for small sizing -->
 			<span class="input-group-addon" id="basic-addon1">With</span>
-		  	<input type="text" class="form-control" placeholder="Who are you with?" aria-describedby="basic-addon1">
+		  	<input onkeyup="showFriendsHint(this.value)" type="text" class="form-control" placeholder="Who are you with?" aria-describedby="basic-addon1">
 		</div>
 	</div>
 	<div id="check-place">
 		<div class="input-group input-group-sm">
 			<span class="input-group-addon" id="basic-addon2">At</span>
-			<input type="text" class="form-control" placeholder="Where are you?" aria-describedby="basic-addon1">
+			<input onkeyup="showPlaceHint(this.value)" type="text" class="form-control" placeholder="Where are you?" aria-describedby="basic-addon1">
 		</div>
 	</div>
 				
@@ -42,3 +44,6 @@
 		</div>
 	</div>
 </div>
+
+<p>Taggable friends suggestions: <span id="friendsHint"></span></p>
+<p>Places suggestions: <span id="placeHint"></span></p>
