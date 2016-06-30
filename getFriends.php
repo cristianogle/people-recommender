@@ -1,4 +1,8 @@
+
 <?php
+	session_start();
+	require_once( "config.php" ); 
+
 	if( isset( $_SESSION['fb_access_token'] ) ) {
 		$fb = new Facebook\Facebook( array(
 			'app_id' => APP_ID,
@@ -8,7 +12,6 @@
 		
 		$request = $fb->request('GET', '/me/taggable_friends?fields=name&limit=4000');
 		$request->setAccessToken( $_SESSION['fb_access_token'] );
-
 		// Send the request to Graph
 		try {
 		  $response = $fb->getClient()->sendRequest($request);
@@ -32,7 +35,7 @@
 		}
 		
 		// get the q parameter from URL
-		$q = $_REQUEST["q"];
+		$q = $_GET["q"];
 		
 		$friendsHint = "";
 		
@@ -51,9 +54,8 @@
 		        }
 		    }
 		}
-
 		// Output "no suggestion" if no hint was found or output correct values 
-		//echo $friendsHint === "" ? "no suggestion" : $friendsHint;
+		echo $friendsHint === "" ? "no suggestion" : $friendsHint;
 		echo "ciao";
 	}
 ?>
