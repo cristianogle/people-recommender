@@ -1,8 +1,6 @@
-
 <?php
 	session_start();
 	require_once( "config.php" ); 
-
 	if( isset( $_SESSION['fb_access_token'] ) ) {
 		$fb = new Facebook\Facebook( array(
 			'app_id' => APP_ID,
@@ -33,29 +31,40 @@
 		foreach($js as $item) { //foreach element in $arr
 			array_push($arrayFriends, $item['name']);
 		}
-		
+
 		// get the q parameter from URL
 		$q = $_GET["q"];
 		
-		$friendsHint = "";
 		
 		// lookup all hints from array if $q is different from "" 
-		if ($q !== "") {
-		    $q = strtolower($q);
-		    $len=strlen($q);
-		    foreach($arrayFriend as $f) {
-		    	$f = strtolower($f);
-		        if (stristr($q, substr($f, 0, $len))) {
-		            if ($friendsHint === "") {
-		                $friendsHint = $f;
-		            } else {
-		                $friendsHint .= ", ".$f;
-		            }
-		        }
-		    }
+		$q = strtolower($q);
+		$friendsHint = "";
+		
+		$explodedReq = explode(" ", $q);
+		$numWordReq = sizeof($explodedReq);
+		
+		if( $q !== "") {
+			foreach($arrayFriends as $f ) {
+				$f = strtolower($f);
+				$exploded = explode(" ", $f);
+
+				$count = 0;
+				foreach($exploded as $e) {
+					foreach($explodedReq as $wordReq) {
+						if (strlen(stristr($e, $wordReq)) > 0) {
+							$count++;
+						}
+					}
+				}
+				if($count >= $numWordReq ) {
+					if( $friendsHint == "")
+						$friendsHint = $f;
+					else
+						$friendsHint .= ", ".$f;
+				}
+			}
 		}
-		// Output "no suggestion" if no hint was found or output correct values 
-		echo $friendsHint === "" ? "no suggestion" : $friendsHint;
-		echo "ciao";
+		// Output hint
+		echo $friendsHint;
 	}
 ?>
