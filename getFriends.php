@@ -1,4 +1,5 @@
 <?php
+	header("Content-Type: application/json");
 	session_start();
 	require_once( "config.php" ); 
 	if( isset( $_SESSION['fb_access_token'] ) ) {
@@ -27,44 +28,13 @@
 		$graphNode = $response->getGraphList();		//json array	
 		$js = json_decode($graphNode, true);		// json decoded. true: array associativo
 		
-		$arrayFriends = array();		
-		foreach($js as $item) { //foreach element in $arr
-			array_push($arrayFriends, $item['name']);
-		}
-
-		// get the q parameter from URL
-		$q = $_GET["q"];
+		$arrayFriends = array();	
 		
+		$response = array();
+		foreach($js as $item) //foreach element in $arr
+			array_push($response, array("id"=>$item['id'], "text"=>$item['name']));
 		
-		// lookup all hints from array if $q is different from "" 
-		$q = strtolower($q);
-		$friendsHint = "";
+		echo json_encode($response);
 		
-		$explodedReq = explode(" ", $q);
-		$numWordReq = sizeof($explodedReq);
-		
-		if( $q !== "") {
-			foreach($arrayFriends as $f ) {
-				$f = strtolower($f);
-				$exploded = explode(" ", $f);
-
-				$count = 0;
-				foreach($exploded as $e) {
-					foreach($explodedReq as $wordReq) {
-						if (strlen(stristr($e, $wordReq)) > 0) {
-							$count++;
-						}
-					}
-				}
-				if($count >= $numWordReq ) {
-					if( $friendsHint == "")
-						$friendsHint = $f;
-					else
-						$friendsHint .= ", ".$f;
-				}
-			}
-		}
-		// Output hint
-		echo $friendsHint;
 	}
 ?>
