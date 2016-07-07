@@ -1,9 +1,11 @@
 $(document).ready(function(){
     $("#user-icon").click(function(){
-    	console.log("click");
         $("#check-with").toggle();
     });
     $("#place-icon").click(function(){
         $("#check-place").toggle();
+    });
+    $("#tagged-p").click(function(){
+        $("#check-with").toggle();
     });
 });
