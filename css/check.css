@@ -32,3 +32,14 @@
 #check-publish {
 	margin-top: 10px;
 }
+
+#tagged-friends {
+	display: none;
+}
+
+#tagged-friends p {
+	display: inline-block;
+	color: blue;
+	padding-left: 3px;
+	cursor: pointer;
+}
