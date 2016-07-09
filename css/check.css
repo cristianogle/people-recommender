@@ -1,0 +1,54 @@
+/* Fast check wrapper CSS */
+
+#user-bar {
+	height: auto;
+}
+
+#check-wrapper {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 35%;
+  	margin: 0 auto;
+}
+
+#check-status {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #bababa;
+	margin: 10px 0 10px 0;
+}
+
+#check-with, #check-place {
+	display: none;
+}
+
+#user-icon, #place-icon {
+	cursor: pointer;
+	color: #bababa;
+	/*text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.5em;*/
+}
+
+#check-publish {
+	margin-top: 10px;
+}
+
+#tagged-friends {
+	display: none;
+}
+
+#tagged-friends p {
+	display: inline-block;
+	color: blue;
+	padding-left: 3px;
+	cursor: pointer;
+}
+
+.select2-place-suggestion-city{
+	font-size: 0.7em;
+	color: grey;
+}
+
+.select2-place-suggestion:hover .select2-place-suggestion-city{
+	color: white;
+}
