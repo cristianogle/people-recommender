@@ -14,8 +14,8 @@
 		$request = $fb->request( "GET"  , "/search" );
 		$request->setAccessToken( $_SESSION['fb_access_token'] );
 		$request->setParams( array( 'type' => 'place' , 
-									'q' => $_GET['q'] , 
-									'limit' => 50 ) );
+					    'q' => $_GET['q'] , 
+					    'limit' => 50 ) );
 		try{													
 			$response = $fb->getClient()->sendRequest($request);
 		} catch(Facebook\Exceptions\FacebookResponseException $e) {
