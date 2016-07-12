@@ -17,17 +17,10 @@
 		<link rel="stylesheet" href="css/check.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/sections.css">
+		<link rel="stylesheet" href="css/popup.css">
 	</head>
 	
 	<body>
-		<div id="login-wrapper">
-			<!--<?php 
-				require_once( 'forced_login.php' ); 
-			?>-->
-		</div>
-		
-		<div id="myDataDiv">
-		</div>
 		<!-- LOGO BAR -->
 		<div id="logo-bar">
 			<div id="logo"></div>
@@ -36,7 +29,7 @@
 	    	      IT
 		  	  	  <span class="caret"></span>
 			  </button>
-	  		  <ul class="dropdown-menu" aria-labelledby="lang-button">
+	  		  <ul class="dropdown-menu" aria-labelledby="lang-button" onclick="clearCheckForm()">
 		    	  <li><a href="#">IT</a></li>
 			      <li><a href="#">EN</a></li>
 	    	      <li><a href="#">FR</a></li>
@@ -65,6 +58,8 @@
 		<script src="js/check.js"></script>
 		<script src="js/friends.js"></script>
 		<script src="js/check-places.js"></script>
+		<script src="publish.js"></script>
+		<script src="popup.js"></script>
 	</body>
 </html>
 

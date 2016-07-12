@@ -65,3 +65,12 @@ function showPlacesHint(){
 		return $row;
 	}
 }
+
+
+$('#places-search').on('select2:select' , function(evt) {
+	$("#post-button").prop( 'disabled' , false );
+});
+
+$('#places-search').on('select2:unselect' , function(evt) {
+	$("#post-button").prop( 'disabled' , true );
+});

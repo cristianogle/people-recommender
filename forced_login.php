@@ -6,10 +6,15 @@
 			'app_id' => APP_ID ,
 			'app_secret' => APP_SECRET,
 			'default_graph_version' => 'v2.6'
-		  ) );
+		  ) );	  
 		  
 	$_SESSION['loginStatus']='forced';
-	$permissions = array( "public_profile" , "user_friends" , "user_location" , "user_photos" , "user_tagged_places" );
+	$permissions = array( "public_profile" , 
+	                      "user_friends" , 
+	                      "user_location" , 
+	                      "user_photos" , 
+	                      "user_tagged_places" , 
+	                      "publish_actions" );
 	$helper = $fb->getRedirectLoginHelper();
 	$loginUrl = $helper->getLoginUrl( 'https://localhost/people_recommender_test/accessHandler.php' , $permissions );
 	
