@@ -14,11 +14,14 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 		<link href="css/select2-bootstrap.min.css" rel="stylesheet" />
+		
 		<link rel="stylesheet" href="css/check.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/sections.css">
-		<link rel="stylesheet" href="css/popup.css">
+		<link rel="stylesheet" href="css/plugins/popup.css">
+		<link rel="stylesheet" href="css/plugins/loader-icon.css">
 	</head>
+	
 	
 	<body>
 		<!-- LOGO BAR -->
@@ -29,7 +32,7 @@
 	    	      IT
 		  	  	  <span class="caret"></span>
 			  </button>
-	  		  <ul class="dropdown-menu" aria-labelledby="lang-button" onclick="clearCheckForm()">
+	  		  <ul class="dropdown-menu" aria-labelledby="lang-button">
 		    	  <li><a href="#">IT</a></li>
 			      <li><a href="#">EN</a></li>
 	    	      <li><a href="#">FR</a></li>
@@ -53,13 +56,14 @@
 		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"   integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="   crossorigin="anonymous"></script>  
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-		<script src="login.js" ></script>
+		<script src="js/login.js" ></script>
 		<script src="js/sections.js"></script>
 		<script src="js/check.js"></script>
 		<script src="js/friends.js"></script>
 		<script src="js/check-places.js"></script>
-		<script src="publish.js"></script>
-		<script src="popup.js"></script>
+		<script src="js/publish.js"></script>
+		<script src="js/plugins/popup.js"></script>
+		<script src="js/plugins/loader-icon.js"></script>
 	</body>
 </html>
 

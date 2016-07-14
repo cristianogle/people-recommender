@@ -30,17 +30,26 @@ function publishPost(){
 		data: postObj , 
 		beforeSend: function(){ 
 						clearCheckForm();
-						showPopup( "Posting your check on Facebook" , "alert-info" , 0 ); 
+						showPopup({ 
+								     message: "Posting your check on Facebook" , 
+								     alertClass: "alert-info" , 
+								     loaderIcon: true ,
+								     loaderIconColor: "#337ab7" 
+						         }); 
 					}
 	}).done( function(response){
 		if( response.published == true ){
-			showPopup( "Your check has been published on your Facebook profile" , 
-					   "alert-success" , 
-					   2000 ); 
+			showPopup({
+					     message: "Your check has been published on your Facebook profile" , 
+					   	 alertClass: "alert-success" , 
+					   	 autoFadeTime: 2000
+					 }); 
 		}else{
-         	showPopup( "An error has occurred. Nothing has been published on your profile. Try again." , 
-         			   "alert-danger" , 
-         			   2000 );
+         	showPopup({
+         			     message: "An error has occurred. Nothing has been published on your profile. Try again." , 
+         			     alertClass: "alert-danger" , 
+         			     autoFadeTime: 2000 
+         			 });
 		}
 	});
 }
