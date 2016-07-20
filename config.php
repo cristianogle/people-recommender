@@ -4,8 +4,8 @@
 
 	require_once __DIR__.'/resources/libraries/facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php';
 	
-	define( 'APP_ID' , '515943968530273' );
-	define( 'APP_SECRET' , 'd45f2e3dedf382c87e79c5c3af6a09cf' );
+	define( 'APP_ID' , '{app-id}' );
+	define( 'APP_SECRET' , '{app-secret}' );
 	define( 'AUTOLOAD_DIRECTORY' , 'resources/autoload');
 	
 	define( 'DB_SERVERNAME' , 'localhost' );
