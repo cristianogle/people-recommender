@@ -18,7 +18,7 @@
 	margin: 10px 0 10px 0;
 }
 
-#check-with, #check-place {
+#check-with {
 	display: none;
 }
 
@@ -31,4 +31,24 @@
 
 #check-publish {
 	margin-top: 10px;
+}
+
+#tagged-friends {
+	display: none;
+}
+
+#tagged-friends p {
+	display: inline-block;
+	color: blue;
+	padding-left: 3px;
+	cursor: pointer;
+}
+
+.select2-place-suggestion-city{
+	font-size: 0.7em;
+	color: grey;
+}
+
+.select2-place-suggestion:hover .select2-place-suggestion-city{
+	color: white;
 }

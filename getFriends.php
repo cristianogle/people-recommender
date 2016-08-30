@@ -1,25 +1,16 @@
 <?php
-	header( "Content-Type: application/json" );
+	header("Content-Type: application/json");
 	session_start();
-	require_once( "config.php" );
-	
-	if( isset( $_SESSION['fb_access_token'] ) ){
-		//echo "<h3>MyData.php<br/>Session Access Token:</h3>";
-		//echo $_SESSION['fb_access_token'];
-		
-		
+	require_once( "config.php" ); 
+	if( isset( $_SESSION['fb_access_token'] ) ) {
 		$fb = new Facebook\Facebook( array(
 			'app_id' => APP_ID,
 			'app_secret' => APP_SECRET,
 			'default_graph_version' => 'v2.6'
 		) );
 		
-		
-		
-		$request = $fb->request('GET', '/me');
+		$request = $fb->request('GET', '/me/taggable_friends?fields=name&limit=4000');
 		$request->setAccessToken( $_SESSION['fb_access_token'] );
-		
-		
 		// Send the request to Graph
 		try {
 		  $response = $fb->getClient()->sendRequest($request);
@@ -33,14 +24,17 @@
 		  exit;
 		}
 		
+		// Convert json array to array name
+		$graphNode = $response->getGraphList();		//json array	
+		$js = json_decode($graphNode, true);		// json decoded. true: array associativo
 		
-		$graphNode = $response->getGraphNode();	
+		$arrayFriends = array();	
 		
-		$userData = array( "id" => $graphNode['id'] ,
-						   "name" => $graphNode['name'] ,
-		 			       "picture" => $imgSrc = 'https://graph.facebook.com/'.$graphNode['id'].'/picture?type=square' );
-		echo json_encode( $userData );
-	}else{
-		echo "<h3>MyData.php: No Access Token</h3>";
+		$response = array();
+		foreach($js as $item) //foreach element in $arr
+			array_push($response, array("id"=>$item['id'], "text"=>$item['name']));
+		
+		echo json_encode($response);
+		
 	}
 ?>
