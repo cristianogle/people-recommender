@@ -44,13 +44,13 @@
 		$firstName = $userGraphNode["first_name"];
 		$lastName = $userGraphNode["last_name"];
 		$gender = $userGraphNode["gender"];
-		$age = date("Y")-$userGraphNode["birthday"]->format("Y");
+		//$age = date("Y")-$userGraphNode["birthday"]->format("Y");
 		$firstCheck = $pathGraphNode[sizeof($pathGraphNode)-1]['created_time'];
 		$firstCheck = $firstCheck->format("Y");
 		$lastCheck = $pathGraphNode[0]['created_time'];
 		$lastCheck = $lastCheck->format("Y");
 		
-		$sql = "REPLACE INTO user (id, first_name, last_name, gender, age, first_check, last_check)
+		$sql = "REPLACE INTO user (id, first_name, last_name, gender, 99 , first_check, last_check)
 			VALUES ('$userId','$firstName','$lastName','$gender', '$age', '$firstCheck', '$lastCheck')";
 		
 		if ($conn->query($sql) === TRUE)

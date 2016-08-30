@@ -1,7 +1,7 @@
 window.fbAsyncInit = function() {
     FB.init({
         appId      : '511638992294104',
-        xfbml      : true,
+        xfbml      : false,
         cookie	   : true,
         version    : 'v2.6'
 	});
@@ -14,8 +14,11 @@ window.fbAsyncInit = function() {
 		console.log( validatorResponse );	
 	});*/
 	
+	FB.Event.subscribe('auth.logout', function(){
+		console.log( "Log out from FB!!" );	
+	});
 	FB.getLoginStatus( function(response){
-		//console.log( response.status );
+		console.log( "getLoginStatus" );
 		
 		
 		var loginRequest = $.ajax({
@@ -30,7 +33,7 @@ window.fbAsyncInit = function() {
 		$.when( loginRequest ).done( function(loginResponse){
 			if( loginResponse != "authentication_required" ){
 				//DEBUG
-				//$( "#login-wrapper" ).html( loginResponse );
+				$( "#login-wrapper" ).html( loginResponse );
 				
 				$(".modal-content").empty();
 				
@@ -40,6 +43,7 @@ window.fbAsyncInit = function() {
 					method: "GET" 
 				}).done( function( userData ) {
 					console.log( userData );
+					
 					$(".modal-content").append( '<div class="modal-header"><h1>Connected</h1></div>' + 
 													'<div class="modal-body"><img src="' + userData.picture + '" alt="profile picture"><br/>' + 
 													'<div id="modal-user">' + userData.name + '</div>' +
@@ -48,11 +52,11 @@ window.fbAsyncInit = function() {
 					$("#status-img").empty();							    
 					$("#status-img").append( '<img src="' + userData.picture + '" alt="profile picture">' );							    
 				});
-			}else{
+			}else{ 
 				$("#custom-modal").modal( "show" );
 			}
 		});					   
-	});
+	}, true);
 	
 	$(document).ready( function(){
 		showLoginModal();
@@ -86,9 +90,11 @@ function showLoginModal(){
 	
 	$.ajax({
 		url: "forced_login.php" ,
-		dataType: "text" ,
+		dataType: "json" ,
 		method: "GET"
-	}).done( function( fbLoginUrl ){
-		$("#login-button").attr( "href" , fbLoginUrl );
+	}).done( function( response ){
+		$("#login-button").attr( "href" , response.fbLoginUrl );
+		
+		console.log( "SERVER_ADDR: " + response.serverAddr );
 	});
 }

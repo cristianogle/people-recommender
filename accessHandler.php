@@ -13,6 +13,8 @@
 	
 	if( isset( $_SESSION['fb_access_token'] ) ){
 		unset( $_SESSION['fb_access_token'] );
+		unset( $_SESSION['user_id']);
+		/*logout();*/
 	}
 
 	

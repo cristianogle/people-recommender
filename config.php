@@ -1,16 +1,17 @@
 <?php 
 	ini_set('display_errors', 'On');
+	require_once( "logout.php" );
 	error_reporting(E_ALL);
-
+	
 	require_once __DIR__.'/resources/libraries/facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php';
 	
-	define( 'APP_ID' , '{app-id}' );
-	define( 'APP_SECRET' , '{app-secret}' );
+	define( 'APP_ID' , '511638992294104' );
+	define( 'APP_SECRET' , 'd785a07c67ebb99933301a5e65dbaff8' );
 	define( 'AUTOLOAD_DIRECTORY' , 'resources/autoload');
 	
 	define( 'DB_SERVERNAME' , 'localhost' );
 	define( 'DB_USERNAME' , 'root' );
-	define( 'DB_PASSWORD' , 'root');
+	define( 'DB_PASSWORD' , 'mohawk');
 	
 	spl_autoload_register( function($class){
 		$file = __DIR__.'/'.AUTOLOAD_DIRECTORY.'/'.$class.".php";
@@ -21,4 +22,10 @@
 			require $file;	
 		}
 	});
+	
+	
+	if( auto_logout() ){
+		//echo "LOGOUT";
+		logout();
+	}
 ?>

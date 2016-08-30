@@ -16,8 +16,13 @@
 	                      "user_tagged_places" , 
 	                      "publish_actions" );
 	$helper = $fb->getRedirectLoginHelper();
-	$loginUrl = $helper->getLoginUrl( 'https://localhost/people_recommender_test/accessHandler.php' , $permissions );
+	 
+	$serverAddr = $_SERVER['SERVER_ADDR'] == "::1" || $_SERVER['SERVER_ADDR'] == "127.0.0.1" ? 'localhost' : $_SERVER['SERVER_ADDR'];
+	 
+	$loginUrl = $helper->getLoginUrl( 'https://'.$serverAddr.'/people_recommender_test/accessHandler.php' , $permissions );
+	
+	echo json_encode( array( "fbLoginUrl" => $loginUrl ,  "serverAddr" => $serverAddr ) );
 	
 	//Redirection link output
-	echo $loginUrl;
+	//echo $loginUrl;
 ?>
