@@ -4,7 +4,6 @@
 	
 	define( "AUTH_REQUIRED" , "authentication_required");
 	define( "AUTHENTICATED" , "authenticated");
-	define( "NOT_AUTHORIZED" , "not_authorized" );
 
 	$fb = new Facebook\Facebook( array(
 			'app_id' => APP_ID ,
@@ -42,7 +41,7 @@
 				echo AUTH_REQUIRED;
 			}
 		}else{ // not_authorized
-			echo NOT_AUTHORIZED;
+			echo "<h1>FB Login Status: Not Authorized</h1>";
 		}
 	}
 ?>

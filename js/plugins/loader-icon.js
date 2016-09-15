@@ -1,13 +1,3 @@
-//DEPENDENCIES: 
-//	loader-icon.css
-//	jQuery
-//
-//USAGE: 
-//	$("{div to be transformed selector}").loaderIcon( "#000" );
-//
-//NOTES:
-//  The div to be transformed must be empty.
-
 ( function( $ ) {
 	
 	$.fn.loaderIcon = function( color ){

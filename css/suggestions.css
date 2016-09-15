@@ -1,0 +1,117 @@
+#content-wrapper {
+	width: 60%;
+	margin: 0 auto;
+}
+
+#suggestions {
+	width: 100%;
+	margin-top: 10px;
+}
+
+#recommended {
+	width: 100%;
+	background-color: #eee;
+	border-radius: 8px;
+	margin: 10px 0 5px 0;
+	padding-top: 10px;
+}
+
+.recommended-user {
+	display: flex;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #BABABA;
+	margin-bottom: 10px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.user-img {
+	width: 7%;
+	margin: 0 5px 0 15px;
+}
+
+.user-info {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 30%;
+	margin: 0 10px 0 10px;
+}
+
+.user-name {
+	font-weight: bold;
+}
+
+.progress {
+	width: 40%;
+	margin: 0 20px 0 20px;
+}
+
+.recommended-buttons {
+	display: flex;
+	width: 20%;
+	flex-flow: column nowrap;
+	margin: 0 10px 0 10px;
+}
+
+.recommended-buttons .btn-group button {
+	margin: 5px 0 5px 0;	
+}
+
+/*Fix link dentro bootstrap button*/
+.recommended-user .recommended-buttons .btn-group button a {
+	color: white;
+	text-decoration: none;
+}
+
+.recommended-user .recommended-buttons .btn-group button a:visited {
+	color: white;
+}
+
+/* View profile */
+
+#view-profile {
+	width: 100%;
+	margin: 20px 0 50px 0;
+	display: none;
+}
+
+#map {
+  height: 500px;
+}
+
+/*Spinner */
+#load-sugg-spinner {
+	display: none;
+	padding-left: 10px;
+}
+
+#load-sugg-spinner span {
+	font-size: 1.5em;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+#order-div {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+/*-----------------*/
+
+/*Order by dropdown css */
+
+
+/* _------------------__*/

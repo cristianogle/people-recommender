@@ -1,33 +1,23 @@
 <div id="suggestions">
-	<!--<div id="order-div" class="btn-group">
+	<div id="order-div" class="btn-group">
   		<button class="btn btn-default btn-sm dropdown-toggle" type="button" id="order-button" data-toggle="dropdown">
       		<span id="selected-order">Order by</span>
   	  		<span class="caret"></span>
   		</button>
   		<ul class="dropdown-menu" aria-labelledby="order-button">
-	    	<li><a href="#">
+	    	<li><a onmousedown="preOrder(this)" onclick="setOrderSelection(this)" onmouseup="afterOrder(this)" href="#">
 	    		<span id="similarity-order" class="order-option">Similarity</span>
 	    	</a></li>
-	    	<li><a href="#">
+	    	<li><a onmousedown="preOrder(this)" onclick="setOrderSelection(this)" onmouseup="afterOrder(this)" href="#">
 	    		<span id="name-order" class="order-option">Name</span>
 	    	</a></li>
-	    	<li><a href="#">
+	    	<li><a onmousedown="preOrder(this)" onclick="setOrderSelection(this)" onmouseup="afterOrder(this)" href="#">
 	    		<span id="random-order" class="order-option">Shuffle!</span>
 	    		</a></li>
   		</ul>
   		<div id="load-sugg-spinner"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span></div>
-	</div>-->
-	<!--<div id="order-div">
-		<div class="dropdown">
-			<input class="dropdown-toggle" type="text">
-			<div class="dropdown-text">Order by</div>
-			<ul class="dropdown-content">
-				<li class="order-option" id="similarity-order"><a onclick="setOrderSelection(this)">Similarity</a></li>
-			    <li class="order-option" id="name-order"><a onclick="setOrderSelection(this)">Name</a></li>
-			    <li class="order-option" id="random-order"><a onclick="setOrderSelection(this)">Shuffle !</a></li>
-			</ul>
-		</div>
-	</div>-->
+	</div>
+
 	
 	<div id="recommended">
 		<div id="idhenri1234" class="recommended-user">
@@ -81,6 +71,7 @@
 <div id="view-profile">
 	<div id="selected-user"></div>
 	<div id="map"></div>
+	<div id="chart_div"></div>
 </div>
 
 

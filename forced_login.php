@@ -13,16 +13,17 @@
 	                      "user_friends" , 
 	                      "user_location" , 
 	                      "user_photos" , 
+	                      "user_birthday",
 	                      "user_tagged_places" , 
-	                      "publish_actions" );
+	                      "publish_actions",
+	                      "user_posts" );
 	$helper = $fb->getRedirectLoginHelper();
-	 
-	$serverAddr = $_SERVER['SERVER_ADDR'] == "::1" || $_SERVER['SERVER_ADDR'] == "127.0.0.1" ? 'localhost' : $_SERVER['SERVER_ADDR'];
-	 
-	$loginUrl = $helper->getLoginUrl( 'https://'.$serverAddr.'/people_recommender_test/accessHandler.php' , $permissions );
 	
-	echo json_encode( array( "fbLoginUrl" => $loginUrl ,  "serverAddr" => $serverAddr ) );
+	$serverAddr = $_SERVER['SERVER_ADDR'] == "::1" || $_SERVER['SERVER_ADDR'] == "127.0.0.1" ? 'localhost' : $_SERVER['SERVER_ADDR'];
+	
+	$loginUrl = $helper->getLoginUrl( 'https://'.$serverAddr.'/people_recommender_test/accessHandler.php' , $permissions );
 	
 	//Redirection link output
 	//echo $loginUrl;
+	echo json_encode( array( "fbLoginUrl" => $loginUrl ,  "serverAddr" => $serverAddr ) );
 ?>

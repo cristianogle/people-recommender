@@ -36,15 +36,11 @@
 		
 		$graphNode = $response->getGraphNode();	
 		
-		if( !isset( $_SESSION['user_id'] ) || $_SESSION['user_id'] != $graphNode['id'] ){
-			$_SESSION['user_id'] = $graphNode['id'];
-		}
-		
 		$userData = array( "id" => $graphNode['id'] ,
 						   "name" => $graphNode['name'] ,
 		 			       "picture" => $imgSrc = 'https://graph.facebook.com/'.$graphNode['id'].'/picture?type=square' );
 		echo json_encode( $userData );
 	}else{
-		echo json_encode( array( "error" => "No access Token" ) );
+		echo "<h3>MyData.php: No Access Token</h3>";
 	}
 ?>

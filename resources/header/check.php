@@ -1,7 +1,7 @@
 <div id="check-wrapper">
 	<div id="check-status">
 		<div id="status-img">
-			<i class="fa fa-user fa-5x" aria-hidden="true"></i>'
+			<i class="fa fa-user fa-5x" aria-hidden="true"></i>
 		</div>
 		<input id="status-text" type="text" class="form-control" placeholder="What's on your mind?">
 	</div>

@@ -1,0 +1,103 @@
+#myprofile-wrapper {
+	display: none;
+    width: 60%;
+    margin: 0 auto; 
+}
+
+#check-head {
+	display: flex;	
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+span.glyphicon {
+	font-size: 3em;
+}
+
+#profile {
+	display: flex;
+	flex-direction: column;
+}
+
+#search-div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#search-div input.search {
+	border:solid 1px #ccc;
+  	border-radius: 5px;
+  	padding:7px 14px;
+  	margin-bottom:10px;
+}
+
+
+#search-div input.search:focus {
+	outline:none;
+  	border-color:#aaa;
+}
+
+/*Spinner */
+#load-profile-spinner {
+	display: none;
+	padding-left: 10px;
+}
+
+#load-profile-spinner span {
+	font-size: 2em;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+/*-----------------*/
+
+#check-list {
+	display: flex;
+	flex-direction: column;
+	list-style-type: none;
+	padding: 5px 10px 5px 10px;
+	background-color: #eee;	
+	border-radius: 8px;
+}
+
+#check-list li .check {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+#check-list li .check .desc {
+	display: flex;
+	flex-direction: column;
+}
+
+#check-list .check .desc .desc-name {
+	font-weight: bold;
+}
+
+#check-list .check .desc .desc-date {
+	font-weight: lighter;
+}
+.actions .glyphicon {
+	font-size: 1.5em;
+}
+
+.actions .glyphicon:hover {
+	cursor: pointer;
+}
