@@ -1,8 +1,7 @@
 <?php 
 	ini_set('display_errors', 'On');
-	require_once( "logout.php" );
 	error_reporting(E_ALL);
-	
+
 	require_once __DIR__.'/resources/libraries/facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php';
 	
 	define( 'APP_ID' , '{app-id}' );
@@ -13,6 +12,7 @@
 	define( 'DB_USERNAME' , '{db-user-name}' );
 	define( 'DB_PASSWORD' , '{db-password}');
 	define( 'DB_NAME' , '{db-name}' );
+
 	
 	spl_autoload_register( function($class){
 		$file = __DIR__.'/'.AUTOLOAD_DIRECTORY.'/'.$class.".php";

@@ -22,7 +22,7 @@ function showPlacesHint(){
 				  
 			processResults: function(data , params){
 				console.log( data.length ); 
-				console.log( data );  
+				console.log( data ); 
 				
 				return{
 					results: $.map(data, function(obj) {				

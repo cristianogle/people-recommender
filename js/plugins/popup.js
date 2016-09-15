@@ -1,11 +1,3 @@
-//DEPENDENCIES: 
-//  popup.css
-//  jQuery
-//  Bootstrap
-
-
-
-
 /*
  * showPopup() function takes a javascript object wit the following properties
  * {

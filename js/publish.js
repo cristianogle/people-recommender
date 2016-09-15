@@ -44,6 +44,10 @@ function publishPost(){
 					   	 alertClass: "alert-success" , 
 					   	 autoFadeTime: 2000
 					 }); 
+			// aggiornamento "automatico" quando si fa un nuovo check dall'app e siamo in myprofile
+			if ( $( '#sections-nav .sections-tab.active' ).attr('id') === "sections-myprofile-tab" ) {
+   				showMyProfile();
+			}				 
 		}else{
          	showPopup({
          			     message: "An error has occurred. Nothing has been published on your profile. Try again." , 

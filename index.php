@@ -15,11 +15,15 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 		<link href="css/select2-bootstrap.min.css" rel="stylesheet" />
 		
+		
 		<link rel="stylesheet" href="css/check.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/sections.css">
 		<link rel="stylesheet" href="css/plugins/popup.css">
 		<link rel="stylesheet" href="css/plugins/loader-icon.css">
+		<link rel="stylesheet" href="css/suggestions.css">
+		<link rel="stylesheet" href="css/myprofile.css">
+		<link rel="stylesheet" href="css/help.css">
 	</head>
 	
 	
@@ -49,13 +53,22 @@
 		</div>
 		
 		<div id="content-wrapper">
+			<?php include 'suggestions.php' ?>
 		</div>
+		<div id="myprofile-wrapper">
+			<?php include 'myprofile.php' ?>
+		</div>
+		<div id="help-wrapper">
+			<?php include 'help.php' ?>
+		</div>
+		
 		
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"   integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="   crossorigin="anonymous"></script>  
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.js"></script>
 		<script src="js/login.js" ></script>
 		<script src="js/sections.js"></script>
 		<script src="js/check.js"></script>
@@ -64,6 +77,13 @@
 		<script src="js/publish.js"></script>
 		<script src="js/plugins/popup.js"></script>
 		<script src="js/plugins/loader-icon.js"></script>
+		<script src="js/suggestions.js"></script>
+		<script src="js/myprofile.js"></script>
+		<script src="js/viewprofile.js"></script>
+		<!--chart scripts-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.bundle.js"></script>
+    	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 	</body>
 </html>
 
